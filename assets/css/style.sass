@@ -118,6 +118,7 @@ body
           font-size: 15px
           line-height: 16px
           white-space: nowrap
+          animation: slideIn 1s ease 0s 1 normal forwards
 
         .description
           display: block
@@ -160,17 +161,20 @@ body
       max-height: 100%
       background-color: $soft_red
       border-radius: 3px
+      animation: swingUp 1s ease 0s 1 normal forwards
+
+      &:hover
+        cursor: pointer
+        background-color: lighten($soft_red, 15%)
 
       &.high
         background-color: $cyan
 
-      &:hover
-        cursor: pointer
-        opacity: .8
+        &:hover
+          background-color: lighten($cyan, 15%)
 
-@media screen and ( min-width: 998px)
+@media screen and ( min-width: 558px)
   .container
-    // min-height: 675px
     padding-top: 67px
 
   .card
@@ -217,7 +221,9 @@ body
             font-size: 47px
             line-height: 47px
 
-        .resume
+        .resume    
+          overflow: hidden
+
           .percent
             font-size: 19px
             line-height: 30px
@@ -241,4 +247,23 @@ body
         width: 50px
         margin: 0 auto
 
+@keyframes swingUp
+  0%
+    opacity: 0
+    transform: rotateX(-70deg)
+    transform-origin: bottom
+
+  100%
+    opacity: 1
+    transform: rotateX(0)
+    transform-origin: bottom
+
+@keyframes slideIn
+  0%
+    opacity: 0
+    transform: translateY(250px)
+
+  100%
+    opacity: 1
+    transform: translateY(0)
     

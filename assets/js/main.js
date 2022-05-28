@@ -12,6 +12,10 @@ fetch(url)
   })
 )
 
+document.addEventListener('DOMContentLoaded', function(){
+  increaseNumberAnimation('totalAmount', '$')
+})
+
 function createBar(element, amount){
   let bar = document.createElement(element)
   bar.style.height = (amount * 1.6)+ '%';
@@ -27,4 +31,24 @@ function createLabel(element, title){
   let label = document.createElement(element)
   label.innerHTML = title
   return label
+}
+
+function increaseNumberAnimation(idElement, decorator=''){
+  let element = document.getElementById(idElement)
+
+  if(element != null){
+    let limit = Number((element.innerHTML).replace(/[^\d.-]/g, ''))
+    console.log("limite " + limit)
+
+    incrementNumber(0, limit, element, decorator)
+  }
+}
+
+function incrementNumber(index, limit, element, decorator=''){
+  if(index <= limit){
+    element.innerHTML = `${decorator}${index}`
+    setTimeout(() => incrementNumber(index + 15, limit, element, decorator), 10)
+  }else{
+    element.innerHTML = `${decorator}${limit}`
+  }
 }
