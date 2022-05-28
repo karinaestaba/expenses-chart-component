@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  
+  <title>Expenses chart component</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card-widget">
+      <span class="resume">
+        <span class="title">My balance</span>
+        <span class="amount">$921.48</span>
+      </span>
+
+      <figure class="icon">
+        <img src="assets/images/logo.svg" alt="Logo" width="60">
+      </figure>
+    </div>
+
+    <section class="card-chart">
+      <header>
+        <h1>Spending - Last 7 days</h1>
+      </header>
+
+      <div class="chart">
+        <div class="bars" id="chartBars"></div>
+        
+        <legend id="chartLegend"></legend>
+      </div>
+
+      <footer>
+        <span class="total">
+          <span class="title">Total this month</span>
+          <span class="amount">$478.33</span>
+        </span>
+
+        <span class="resume">
+          <span class="percent">+2.4%</span>
+          <span class="description">from last month</span>
+        </span>
+      </footer>
+    </section>
+  </main>
+  
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

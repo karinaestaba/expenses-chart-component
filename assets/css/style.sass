@@ -1,0 +1,151 @@
+$soft_red: hsl(10, 79%, 65%)
+$cyan: hsl(186, 34%, 60%)
+$dark_brown: hsl(25, 47%, 15%)
+$medium_brown: hsl(28, 10%, 53%)
+$cream: hsl(27, 66%, 92%)
+$very_pale_orange: hsl(33, 100%, 98%)
+$font_size: 18px
+$font_family: 'DM Sans', sans-serif
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  outline: 0
+
+  &::after, &::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    outline: 0
+
+html,
+body
+  min-height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $cream
+  font-size: $font_size
+  font-family: $font_family
+  line-height: 23px
+  font-weight: 400
+
+.container
+  max-width: 1220px
+  padding: 20px
+  margin: 0 auto
+
+.card
+  &-widget
+    background-color: $soft_red
+    padding: 20px
+    border-radius: 12px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 10px
+    color: $very_pale_orange
+    margin-bottom: 20px
+
+    .title
+      display: block
+      margin-bottom: 10px
+
+    .amount
+      display: block
+      font-weight: 700
+      font-size: 25px
+
+    .icon
+      img
+        display: block
+
+  &-chart
+    background-color: $very_pale_orange
+    border-radius: 12px
+    padding: 20px
+
+    header
+      color: $dark_brown
+
+      h1
+        font-size: 25px
+        line-height: 30px
+
+    footer
+      padding-top: 20px
+      color: $medium_brown
+      display: flex
+      justify-content: space-between
+      border-top: 3px solid $cream
+      
+      .total
+        .title
+          font-size: 12px
+          display: block
+
+        .amount
+          display: block
+          font-size: 30px
+          line-height: 36px
+          color: $dark_brown
+          font-weight: 700
+
+      .resume
+        text-align: right
+        align-self: flex-end
+
+        .percent
+          display: block
+          color: $dark_brown
+          font-weight: 700
+
+        .description
+          display: block
+          font-size: 12px
+
+    .chart
+      list-style: none
+      padding-top: 20px
+      padding-bottom: 20px
+
+      display: grid
+      grid-template-columns: 1fr
+      grid-template-rows: 1fr auto
+      height: 200px
+      align-items: end
+
+      legend
+        display: grid
+        grid-template-columns: repeat(7, minmax(20px, 1fr))
+        grid-template-rows: 1fr
+        gap: 8px
+        grid-row: 2/3
+        text-align: center
+        font-size: 12px
+        color: $medium_brown
+
+      .bars
+        grid-row: 1/2
+        display: grid
+        grid-template-columns: repeat(7, minmax(20px, 1fr))
+        grid-template-rows: 1fr
+        align-items: end
+        gap: 8px
+        height: 100%
+
+        span
+          display: block
+          height: 50%
+          max-height: 100%
+          background-color: $soft_red
+          border-radius: 3px
+
+          &.high
+            background-color: $cyan
+
+          &:hover
+            cursor: pointer
+            opacity: .8
+
