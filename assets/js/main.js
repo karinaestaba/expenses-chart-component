@@ -13,8 +13,8 @@ fetch(url)
 )
 
 document.addEventListener('DOMContentLoaded', function(){
-  // increaseNumberAnimation('totalAmount', '$')
-  // increaseNumberAnimation('totalBalance', '$')
+  increaseNumberAnimation('totalAmount', '$')
+  increaseNumberAnimation('totalBalance', '$')
 })
 
 function createBar(element, item){
