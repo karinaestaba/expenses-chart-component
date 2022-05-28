@@ -162,10 +162,28 @@ body
       background-color: $soft_red
       border-radius: 3px
       animation: swingUp 1s ease 0s 1 normal forwards
+      position: relative
+      
+      &::before
+        display: none
 
       &:hover
         cursor: pointer
         background-color: lighten($soft_red, 15%)
+
+        &::before
+          content: attr(data-amount)
+          display: block
+          background: $dark_brown
+          color: white
+          font-weight: 700
+          position: absolute
+          padding: 8px
+          border-radius: 5px
+          bottom: 105%
+          left: 50%
+          transform: translate(-50%, 0)
+          animation: slideUp 1s ease 0s 1 normal forwards
 
       &.high
         background-color: $cyan
@@ -266,4 +284,13 @@ body
   100%
     opacity: 1
     transform: translateY(0)
+    
+@keyframes slideUp
+  0%
+    opacity: 0
+    transform: translate(-50%, 20%)
+
+  100%
+    opacity: 1
+    transform: translate(-50%, -10%)
     

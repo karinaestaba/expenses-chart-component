@@ -6,7 +6,7 @@ fetch(url)
 .then(resp => resp.json())
 .then(chartData => chartData.map(item => {
     if('amount' in item && 'day' in item){
-      chartBars.appendChild(createBar('span', item.amount))
+      chartBars.appendChild(createBar('span', item))
       chartLegend.appendChild(createLabel('span', item.day))
     }
   })
@@ -14,13 +14,15 @@ fetch(url)
 
 document.addEventListener('DOMContentLoaded', function(){
   increaseNumberAnimation('totalAmount', '$')
+  increaseNumberAnimation('totalBalance', '$')
 })
 
-function createBar(element, amount){
+function createBar(element, item){
   let bar = document.createElement(element)
-  bar.style.height = (amount * 1.6)+ '%';
+  bar.style.height = (item.amount * 1.6)+ '%';
+  bar.dataset.amount = item.amount
 
-  if(amount >= 50){
+  if(item.amount >= 50){
     bar.classList.add('high')
   }
 
@@ -38,8 +40,6 @@ function increaseNumberAnimation(idElement, decorator=''){
 
   if(element != null){
     let limit = Number((element.innerHTML).replace(/[^\d.-]/g, ''))
-    console.log("limite " + limit)
-
     incrementNumber(0, limit, element, decorator)
   }
 }
