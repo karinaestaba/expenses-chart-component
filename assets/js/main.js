@@ -14,7 +14,7 @@ fetch(url)
 
 function createBar(element, amount){
   let bar = document.createElement(element)
-  bar.style.height = (amount * 1.8)+ '%';
+  bar.style.height = (amount * 1.6)+ '%';
 
   if(amount >= 50){
     bar.classList.add('high')

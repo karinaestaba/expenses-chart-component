@@ -124,48 +124,121 @@ body
           font-size: 15px
           line-height: 20px
 
-    .chart
-      list-style: none
-      height: 235px
-      padding-top: 20px
-      padding-bottom: 20px
+.chart
+  list-style: none
+  height: 235px
+  padding-top: 20px
+  padding-bottom: 20px
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr auto
+  gap: 13px
+  align-items: end
 
-      display: grid
-      grid-template-columns: 1fr
-      grid-template-rows: 1fr auto
-      gap: 13px
-      align-items: end
+  .legend
+    display: grid
+    grid-template-columns: repeat(7, minmax(20px, 1fr))
+    grid-template-rows: 1fr
+    gap: 8px
+    grid-row: 2/3
+    text-align: center
+    font-size: 12px
+    color: $medium_brown
 
-      .legend
-        display: grid
-        grid-template-columns: repeat(7, minmax(20px, 1fr))
-        grid-template-rows: 1fr
-        gap: 8px
-        grid-row: 2/3
-        text-align: center
-        font-size: 12px
-        color: $medium_brown
+  .bars
+    grid-row: 1/2
+    display: grid
+    grid-template-columns: repeat(7, minmax(20px, 1fr))
+    grid-template-rows: 1fr
+    align-items: end
+    gap: 8px
+    height: 100%
 
-      .bars
-        grid-row: 1/2
-        display: grid
-        grid-template-columns: repeat(7, minmax(20px, 1fr))
-        grid-template-rows: 1fr
-        align-items: end
-        gap: 8px
-        height: 100%
+    span
+      display: block
+      height: 50%
+      max-height: 100%
+      background-color: $soft_red
+      border-radius: 3px
 
-        span
-          display: block
-          height: 50%
-          max-height: 100%
-          background-color: $soft_red
-          border-radius: 3px
+      &.high
+        background-color: $cyan
 
-          &.high
-            background-color: $cyan
+      &:hover
+        cursor: pointer
+        opacity: .8
 
-          &:hover
-            cursor: pointer
-            opacity: .8
+@media screen and ( min-width: 998px)
+  .container
+    // min-height: 675px
+    padding-top: 67px
 
+  .card
+    &-widget,
+    &-chart
+      max-width: 537px
+      border-radius: 18px
+
+    &-widget
+      padding: 27px 30px 36px
+
+      .title
+        margin-bottom: 17px
+        font-size: 18px
+
+      .amount
+        font-size: 32px
+
+      .icon
+        img
+          width: 74px
+          margin-right: 6px
+
+    &-chart
+      padding: 43px 38px 16px
+      
+      header
+        h1
+          font-size: 32px
+          line-height: 32px
+
+          > span
+            margin-left: 0
+
+      footer
+        padding: 32px 0
+
+        .total
+          .title
+            font-size: 18px
+            margin-bottom: 9px
+
+          .amount
+            font-size: 47px
+            line-height: 47px
+
+        .resume
+          .percent
+            font-size: 19px
+            line-height: 30px
+
+          .description
+            font-size: 18px
+            line-height: 20px
+
+  .chart
+    height: 259px
+    gap: 9px
+    padding-bottom: 30px
+
+    .legend
+      font-size: 16px
+
+    .bars
+      column-gap: 16px
+
+      span
+        width: 50px
+        margin: 0 auto
+
+    
