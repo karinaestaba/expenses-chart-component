@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Repo](https://github.com/karinaestaba/expenses-chart-component)
-- Live Site URL: [Demo](https://karinaestaba.github.com/expenses-chart-component)
+- Live Site URL: [Demo](https://karinaestaba.github.io/expenses-chart-component/)
 
 ## My process
 
